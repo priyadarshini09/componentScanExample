@@ -11,11 +11,11 @@ import org.springframework.context.annotation.FilterType;
         "guru.springframework.blog.componentscan.example.demopackageB"},
         includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, value = Custom.class),
         useDefaultFilters = false)
-public class BlogPostsApplicationIncludeAnnotation {
+public class BlogPostsApplicationIncludeFilter {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         try{
-            context.register(BlogPostsApplicationIncludeAnnotation.class);
+            context.register(BlogPostsApplicationIncludeFilter.class);
             context.refresh();
             System.out.println("Contains A  " + context.containsBean("demoBeanA"));
             System.out.println("Contains B1  " + context.containsBean("demoBeanB1"));

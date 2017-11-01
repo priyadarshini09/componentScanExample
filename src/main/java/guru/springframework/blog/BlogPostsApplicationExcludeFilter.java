@@ -9,12 +9,14 @@ import org.springframework.context.annotation.FilterType;
 
 @Configuration
 @ComponentScan(basePackageClasses = DemoBeanB1.class,
-        excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = DemoBeanB2.class))
-public class BlogPostsApplicationExcludeAnnotation {
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,
+                value = DemoBeanB2.class))
+public class BlogPostsApplicationExcludeFilter {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext context = new
+                AnnotationConfigApplicationContext();
         try{
-            context.register(BlogPostsApplicationExcludeAnnotation.class);
+            context.register(BlogPostsApplicationExcludeFilter.class);
             context.refresh();
             System.out.println("Contains B1  " + context.containsBean("demoBeanB1"));
             System.out.println("Contains B2  " + context.containsBean("demoBeanB2"));

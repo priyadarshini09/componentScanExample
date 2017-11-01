@@ -17,11 +17,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = {"guru.springframework.blog.componentscan.example.demopackageA",
         "guru.springframework.blog.componentscan.example.demopackageD",
-        "guru.springframework.blog.componentscan.example.demopackageE"}, basePackageClasses = DemoBeanB1.class)
+        "guru.springframework.blog.componentscan.example.demopackageE"},
+        basePackageClasses = DemoBeanB1.class)
 public class BlogPostsApplication {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext context = new
+                AnnotationConfigApplicationContext();
         try{
             context.register(BlogPostsApplication.class);
             context.refresh();
@@ -29,10 +31,11 @@ public class BlogPostsApplication {
                     +context.getBean(BlogPostsApplication.class));
             System.out.println("DemoBeanA " + context.getBean(DemoBeanA.class));
             System.out.println("DemoBeanB1 " + context.getBean(DemoBeanB1.class));
-            System.out.println("Contains B2  " + context.containsBean("demoBeanB2"));
-            System.out.println("Contains C   " + context.containsBean("demoBeanC"));
             System.out.println("DemoBeanD " + context.getBean(DemoBeanD.class));
             System.out.println("DemoBeanE " + context.getBean(DemoBeanE.class));
+            System.out.println("Contains B2  " + context.containsBean("demoBeanB2"));
+            System.out.println("Contains C   " + context.containsBean("demoBeanC"));
+            System.out.println("Contains D   " + context.containsBean("demoBeanD"));
 
         }finally {
             context.close();

@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
 @Configuration
-@ComponentScan(useDefaultFilters = false, includeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*[AB12]"))
+@ComponentScan(useDefaultFilters = false, includeFilters = @ComponentScan.Filter
+        (type = FilterType.REGEX, pattern = ".*[AB12]"))
 public class BlogPostsApplicationFilterTypeRegex {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
