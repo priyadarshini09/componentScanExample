@@ -13,7 +13,8 @@ import org.springframework.context.annotation.Configuration;
         basePackageClasses = DemoBeanB1.class)
 public class BlogPostsApplicationWithComponentScan {
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(BlogPostsApplication.class,args);
+        ApplicationContext context = SpringApplication.
+                run(BlogPostsApplicationWithComponentScan.class,args);
         System.out.println("Contains A  "+context.
                 containsBeanDefinition("demoBeanA"));
         System.out.println("Contains B2  " + context.
